@@ -66,8 +66,8 @@ struct Human{
 };
 
 struct Save{
-    struct Human H;
-    struct Human* next;
+    struct Human h;
+    struct Save* next;
 };
 
 // Relatives function

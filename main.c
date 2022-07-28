@@ -29,6 +29,7 @@ int main(int argc, char* argv[]){
     FILE * foo;
     enum exit_code;
     enum boolean;
+    struct Save *Save;
 
     // relative to file
     char file[BUFFER];
@@ -45,9 +46,27 @@ int main(int argc, char* argv[]){
     foo = fopen(file, "r+"); // here
     assert(foo != NULL);
 
-    displayHumanList(foo, system);
+    //displayHumanList(foo, system);
+
+    // if(isEmpty(Save) == false){
+    //     printf("Empty list.");
+    //     return 0;
+    // } else{
+    //     printf("Ok.");
+    // }
+
+    //load(foo);
 
     free(system);
     fclose(foo);
+
     return foo ? SUCCESS : FAILED;
+}
+
+enum boolean isEmpty(struct Save *s){
+    if(s == NULL){
+        return true;
+    } else{
+        return false;
+    }
 }

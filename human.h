@@ -13,9 +13,11 @@
 #include <time.h>
 #include <string.h>
 #include <assert.h>
+#include <limits.h>
 
 // Usage for file and string
 #define BUFFER 255
+#define string malloc(sizeof(char) * BUFFER)
 
 // Relatives informations of human's body
 #define IMCmax 24.9
@@ -48,10 +50,12 @@ enum exit_code{
     UNKNOWN_EXTENSION // if the data file ext != .zod
 };
 
+// Boolean struct (true, false)
 enum boolean{
     true,
     false  
 };
+
 
 // Human struct (* = can be null)
 struct Human{
@@ -65,15 +69,25 @@ struct Human{
     double weight;      // @ex : 82 (kg)
 };
 
-// Relatives function
-int main(int argc, char* argv[]); // @usage : ./human.exe <foo.zod>
-enum boolean checkExtension(char name[]);
+//
+struct Save{
+    struct Human h;
+    struct Save* nxt;
+};
 
+// Relatives primitif function
+int main(int argc, char* argv[]); // @usage : ./human.exe
+enum boolean checkExtension(char name[]); //OK
+
+// Relatives function for struct Save{}
+void load(FILE* foo);
+enum boolean isEmpty();
+
+// Relatives function for Human
 struct Human searchHumanByName(char* regex);
 struct Human selectHuman(char* fn, char* ln, char* b);
-void displayHumanList(FILE* foo, char* os);
-int howManyHumanRegistered();
-enum boolean createHumanInLine(char fn[], char ln[], int bm, int bd, int by, char sx, double sz, double wg);
+void displayHumanList(FILE* foo, char* os); //OK
+int howManyHumanRegistered();\
 enum boolean createHuman();
 void modifyHuman(struct Human h);
 char* getFirstName(struct Human h);

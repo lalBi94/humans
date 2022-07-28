@@ -1,3 +1,5 @@
+@rem FUCK MAKEFILEEEEE
+
 @echo off
 
 cls 

@@ -12,7 +12,7 @@
 #include <math.h>
 #include <time.h>
 #include <string.h>
-
+#include <assert.h>
 
 // Usage for file and string
 #define BUFFER 255
@@ -65,18 +65,13 @@ struct Human{
     double weight;      // @ex : 82 (kg)
 };
 
-struct Save{
-    struct Human h;
-    struct Save* next;
-};
-
 // Relatives function
 int main(int argc, char* argv[]); // @usage : ./human.exe <foo.zod>
 enum boolean checkExtension(char name[]);
 
 struct Human searchHumanByName(char* regex);
 struct Human selectHuman(char* fn, char* ln, char* b);
-void displayOfHuman(int limit);
+void displayHumanList(FILE* foo, char* os);
 int howManyHumanRegistered();
 enum boolean createHumanInLine(char fn[], char ln[], int bm, int bd, int by, char sx, double sz, double wg);
 enum boolean createHuman();

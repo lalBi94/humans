@@ -1,26 +1,21 @@
-#include "human.h"
+// #include "human.h"
 
-enum boolean createHuman(){
-    struct Human h;
-    char* fn = malloc(sizeof(char) * BUFFER), 
-    ln = malloc(sizeof(char) * BUFFER),
-    gender = malloc(sizeof(char) * 2);
-    int bm, bd, by;
-    double size, weight;
-    
-    printf("Firstname : "); scanf("%s", fn);
-    printf("\nMounth birth : "); scanf("%d", &bm);
-    printf("\nDay birth : "); scanf("%d", &bd);
-    printf("\nYear birth : "); scanf("%d", &by);
-    printf("\nGender : "); scanf("%s", gender);
-    printf("\nSize (cm) : "); scanf("%lf", &size);
-    printf("\nWeight (kg) : "); scanf("%lf", &weight);
+// enum boolean createHuman(){
 
-    strcpy(h.firstname, fn);
-    printf("%s == %s", fn, h.firstname);
+//     printf("Firstname : "); scanf("%[^\n]", fn);
+//     printf("Lastname : "); scanf(" %[^\n]", ln);
+//     printf("\nMounth birth : "); scanf("%d", &bm);
+//     printf("\nDay birth : "); scanf("%d", &bd);
+//     printf("\nYear birth : "); scanf("%d", &by);
+//     printf("\nGender : "); scanf("%s", gender);
+//     printf("\nSize (cm) : "); scanf("%lf", &size);
+//     printf("\nWeight (kg) : "); scanf("%lf", &weight);
 
-    free(fn); 
-    free(ln);
+//     strcpy(h.firstname, fn);
+//     printf("%s == %s", fn, h.firstname);
 
-    return true;
-}
+//     free(fn); 
+//     free(ln);
+
+//     return true;
+// }

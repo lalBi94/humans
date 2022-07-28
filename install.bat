@@ -23,7 +23,6 @@ if exist human.exe (
 ) 
 
 if not exist human.exe (
-
     @REM Check ::human.h
     if not exist human.h ( 
         echo :: human.h 

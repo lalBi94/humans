@@ -75,8 +75,8 @@ void load(FILE* foo){
                 __tmp++;
             } 
 
-            printf("%d", __AllCaseInOneInt(_stockint, __tmp));
-            
+            Human.b_day = __AllCaseInOneInt(_stockint, __tmp);
+            printf("%d", Human.b_day);
 
 
 

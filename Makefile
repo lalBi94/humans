@@ -1,5 +1,7 @@
 DIR = src/
+CFLAGS = -Wall -Werror
+WITHOUTFLAGS = -w
 
 defaut:
-	gcc *.c -o human.exe
-	./human.exe
+	gcc $(WITHOUTFLAGS) *.c -o human.exe 
+	./human.exe "data.zod"

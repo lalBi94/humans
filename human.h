@@ -14,10 +14,13 @@
 #include <string.h>
 #include <assert.h>
 #include <limits.h>
+#include <ctype.h>
 
 // Usage for file and string
-#define BUFFER 255
-#define string malloc(sizeof(char) * BUFFER)
+#define BUFFER 255 // max string size
+#define string malloc(sizeof(char) * BUFFER) // init string variable
+#define integer malloc(sizeof(int) * BUFFER) // init int variable
+#define __NL printf("\n") //to define only \n 
 
 // Relatives informations of human's body
 #define IMCmax 24.9
@@ -56,9 +59,9 @@ enum boolean{
     false  
 };
 
-
 // Human struct (* = can be null)
 struct Human{
+    int id;
     char* firstname;    // @ex : Boudjemline
     char* lastname;     // @ex : Bilal
     int b_mounth;       // @ex : 2
@@ -69,35 +72,28 @@ struct Human{
     double weight;      // @ex : 82 (kg)
 };
 
-//
-struct Save{
-    struct Human h;
-    struct Save* nxt;
-};
+static struct Human data[BUFFER];
 
 // Relatives primitif function
-int main(int argc, char* argv[]); // @usage : ./human.exe
+int main(int argc, char* argv[]); // @usage : ./human.exe <file.zod>
 enum boolean checkExtension(char name[]); //OK
-
-// Relatives function for struct Save{}
-void load(FILE* foo);
-enum boolean isEmpty();
+void load(FILE*);
 
 // Relatives function for Human
-struct Human searchHumanByName(char* regex);
-struct Human selectHuman(char* fn, char* ln, char* b);
-void displayHumanList(FILE* foo, char* os); //OK
-int howManyHumanRegistered();\
-enum boolean createHuman();
-void modifyHuman(struct Human h);
-char* getFirstName(struct Human h);
-char* getLastName(struct Human h);
-char getGender(struct Human h);
-char* getBirthday(struct Human h);
-double getSize(struct Human h);
-double getWeight(struct Human h);
-enum boolean ifExist(struct Human h);
-enum exit_code getExitCode(struct Human H);
+struct Human searchHumanByName(char*);
+struct Human selectHuman(char*, char*, char*);
+void displayHumanList(FILE*, char*); //OK
+int howManyHumanRegistered(void);
+enum boolean createHuman(void);
+void modifyHuman(struct Human);
+char* getFirstName(struct Human) ;
+char* getLastName(struct Human);
+char getGender(struct Human);
+char* getBirthday(struct Human);
+double getSize(struct Human);
+double getWeight(struct Human);
+enum boolean ifExist(struct Human);
+enum exit_code getExitCode(struct Human);
 
 #endif
 

@@ -1,8 +1,8 @@
 #include "human.h"
 
 int main(int argc, char* argv[]){
-    printf("\n\n[HUMAN CREATOR by. Zod]\n\n");
-    printf("Welcome user !\n");
+    printf("\n[HUMAN CREATOR by. Zod]\n\n");
+    printf("Welcome !\n");
     char* system = malloc(sizeof(char) * 11);
     
     #ifdef _WIN64
@@ -25,48 +25,28 @@ int main(int argc, char* argv[]){
         strcpy(system, "l");
     #endif
 
+    if(argc != 2){
+        printf("Usage: human.exe 'file.zod'");
+        return FAILED;
+    }
+
     // implicits declarations
     FILE * foo;
     enum exit_code;
     enum boolean;
-    struct Save *Save;
 
     // relative to file
     char file[BUFFER];
-    strcpy(file, "data.zod");
-    int sizeFoo = strlen(file);
-
-    if(checkExtension(file) == true){
-        printf("\nload file [%s] ...\n\n", file);
-    } else{
-        printf("incompatible extension, exit."); 
-        return UNKNOWN_EXTENSION;
-    }
+    strcpy(file, argv[1]);
 
     foo = fopen(file, "r+"); // here
     assert(foo != NULL);
 
     //displayHumanList(foo, system);
-
-    // if(isEmpty(Save) == false){
-    //     printf("Empty list.");
-    //     return 0;
-    // } else{
-    //     printf("Ok.");
-    // }
-
-    //load(foo);
+    load(foo);
 
     free(system);
     fclose(foo);
 
-    return foo ? SUCCESS : FAILED;
-}
-
-enum boolean isEmpty(struct Save *s){
-    if(s == NULL){
-        return true;
-    } else{
-        return false;
-    }
+    return SUCCESS;
 }

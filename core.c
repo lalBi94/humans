@@ -28,7 +28,7 @@ int main(int argc, char* argv[]){
     if(argc != 2){
         printf("Usage: human.exe 'file.zod'");
         return FAILED;
-    }
+    } assert(argc == 2);
 
     // implicits declarations
     FILE * foo;
@@ -37,13 +37,13 @@ int main(int argc, char* argv[]){
 
     // relative to file
     char file[BUFFER];
-    strcpy(file, argv[1]);
+    assert(strcpy(file, argv[1]) != NULL);
 
     foo = fopen(file, "r+"); // here
     assert(foo != NULL);
 
-    //displayHumanList(foo, system);
-    load(foo);
+    assert(load(foo) != FAILED); // load
+    displayHumanList();  
 
     free(system);
     fclose(foo);

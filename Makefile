@@ -1,7 +1,14 @@
 DIR = src/
+CC = gcc
 CFLAGS = -Wall -Werror
-WITHOUTFLAGS = -w
+WITHOUTERROR = -w
+FILE = *
+O = -o
+EXE = human.exe 
+
+# TO TEST
+DATA = "data.zod"
 
 defaut:
-	gcc $(WITHOUTFLAGS) *.c -o human.exe 
-	./human.exe "data.zod"
+	$(CC) $(WITHOUTERROR) $(FILE).c $(O) $(EXE)
+	./$(EXE) $(DATA)

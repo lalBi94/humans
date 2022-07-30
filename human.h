@@ -68,21 +68,22 @@ struct Human{
     int b_day;          // @ex : 25
     int b_year;         // @ex : 2003
     char gender;        // @ex : [M / F] (Male, Female)
-    double size;        // @ex : 184 (cm)
-    double weight;      // @ex : 82 (kg)
+    int size;        // @ex : 184 (cm)
+    int weight;      // @ex : 82 (kg)
 };
 
-static struct Human data[BUFFER];
+struct Human data[BUFFER];
 
-// Relatives primitif function
+// Relatives primitives function
 int main(int argc, char* argv[]); // @usage : ./human.exe <file.zod>
-enum boolean checkExtension(char name[]); //OK
-void load(FILE*);
+enum boolean checkExtension(char name[]); // OK
+enum boolean load(FILE*); // OK
+int getDataSize(); // OK
 
 // Relatives function for Human
+void displayHumanList(); // OK
 struct Human searchHumanByName(char*);
 struct Human selectHuman(char*, char*, char*);
-void displayHumanList(FILE*, char*); //OK
 int howManyHumanRegistered(void);
 enum boolean createHuman(void);
 void modifyHuman(struct Human);
@@ -90,8 +91,8 @@ char* getFirstName(struct Human) ;
 char* getLastName(struct Human);
 char getGender(struct Human);
 char* getBirthday(struct Human);
-double getSize(struct Human);
-double getWeight(struct Human);
+int getSize(struct Human);
+int getWeight(struct Human);
 enum boolean ifExist(struct Human);
 enum exit_code getExitCode(struct Human);
 

@@ -17,7 +17,7 @@
 #include <ctype.h>
 
 // Usage for file and string
-#define BUFFER 255 // max string size
+#define BUFFER 10 // max string/data size
 #define string malloc(sizeof(char) * BUFFER) // init string variable
 #define integer malloc(sizeof(int) * BUFFER) // init int variable
 #define __NL printf("\n") //to define only \n 

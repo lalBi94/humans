@@ -149,12 +149,6 @@ enum boolean load(FILE* foo){
     return SUCCESS;
 }
 
-void __refresh(char* toRefresh){
-    for(int i = 0; i <= BUFFER; i++){
-        *(toRefresh + i) = NULL;
-    } 
-}
-
 int __AllCaseInOneInt(int* tab, int sizeofint){
     if(sizeofint == 1){
         return *(tab + 0);

@@ -73,6 +73,7 @@ struct Human{
 };
 
 struct Human data[BUFFER];
+struct Human ifFailedHumanSearch[1];
 
 // Relatives primitives function
 int main(int argc, char* argv[]); // @usage : ./human.exe <file.zod>
@@ -82,19 +83,19 @@ int getDataSize(); // OK
 
 // Relatives function for Human
 void displayHumanList(); // OK
-struct Human searchHumanByName(char*);
-struct Human selectHuman(char*, char*, char*);
-int howManyHumanRegistered(void);
-enum boolean createHuman(void);
-void modifyHuman(struct Human);
-char* getFirstName(struct Human) ;
+struct Human searchHumanByFirstName(char*); // OK
+enum boolean ifExist(struct Human); // OK
+
+char* getFirstName(struct Human);
 char* getLastName(struct Human);
 char getGender(struct Human);
 char* getBirthday(struct Human);
 int getSize(struct Human);
 int getWeight(struct Human);
-enum boolean ifExist(struct Human);
 enum exit_code getExitCode(struct Human);
+
+enum boolean createHuman(void);
+void modifyHuman(struct Human);
 
 #endif
 

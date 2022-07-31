@@ -1,6 +1,14 @@
 #include "human.h"
 
 int main(int argc, char* argv[]){
+    ifFailedHumanSearch[0].firstname = NULL;
+    ifFailedHumanSearch[0].lastname = NULL;
+    ifFailedHumanSearch[0].b_day = 0;
+    ifFailedHumanSearch[0].b_mounth = 0;
+    ifFailedHumanSearch[0].b_year = 0;
+    ifFailedHumanSearch[0].size = 0;
+    ifFailedHumanSearch[0].weight = 0;
+
     printf("\n[HUMAN CREATOR by. Zod]\n\n");
     printf("Welcome !\n");
     char* system = malloc(sizeof(char) * 11);
@@ -41,9 +49,17 @@ int main(int argc, char* argv[]){
 
     foo = fopen(file, "r+"); // here
     assert(foo != NULL);
-
     assert(load(foo) != FAILED); // load
-    displayHumanList();  
+
+
+    // Function TEST :
+
+    // displayHumanList();
+
+    // struct Human h = searchHumanByFirstName("Boudjemline");
+    // printf("%s", h.lastname);
+
+    
 
     free(system);
     fclose(foo);

@@ -8,6 +8,7 @@ enum boolean load(FILE* foo){
     printf("\n\nLoad file...\n");
 
     struct Human Human;
+    enum boolean exit_code;
 
     const char __po = (char) 40, 
         __pf = (char) 41, 
@@ -138,7 +139,7 @@ enum boolean load(FILE* foo){
             }
         }
     }
-
+    
     printf("%d Humans.\n\n", getDataSize());
     free(__cur);
     free(_tmp);

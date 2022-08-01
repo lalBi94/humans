@@ -18,10 +18,8 @@ enum boolean load(FILE* foo){
         idIsPassed = 0;
 
     char* __cur = string; 
-
     char* _tmp = string;
     char* _tmp2 = string; // stock characters firstname
-
     int* _stockint = integer; // stock integer
 
     int __tmp = 0, 
@@ -145,7 +143,6 @@ enum boolean load(FILE* foo){
     free(_tmp);
     free(_tmp2);
     free(_stockint);
-    fclose(foo);
 
     return SUCCESS;
 }

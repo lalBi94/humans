@@ -58,8 +58,18 @@ int main(int argc, char* argv[]){
 
     // struct Human h = searchHumanByFirstName("Boudjemline");
     // printf("%s", h.lastname);
-
     
+    struct Human h;
+    h.firstname = "Boudjemline";
+    h.lastname = "Bilal";
+    h.b_mounth = 2;
+    h.b_day = 25;
+    h.b_year = 2003;
+    h.gender = (char) 77;
+    h.size = 180;
+    h.weight = 82;
+
+    assert(ifExist(h) != false);
 
     free(system);
     fclose(foo);

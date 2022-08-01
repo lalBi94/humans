@@ -70,7 +70,6 @@ if not exist human.exe (
     )
 
     @REM Creation of human.exe
-    gcc -w *.c -o human.exe >nul
     echo Successful installation.
 )
 

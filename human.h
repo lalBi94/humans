@@ -80,6 +80,7 @@ int main(int argc, char* argv[]); // @usage : ./human.exe <file.zod>
 enum boolean checkExtension(char name[]); // OK
 enum boolean load(FILE*); // OK
 int getDataSize(); // OK
+void test();
 
 // Relatives function for Human
 void displayHumanList(); // OK

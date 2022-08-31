@@ -80,22 +80,22 @@ int main(int argc, char* argv[]); // @usage : ./human.exe <file.zod>
 enum boolean checkExtension(char name[]); // OK
 enum boolean load(FILE*); // OK
 int getDataSize(); // OK
-void test();
+void test(); // TEMP BUT OK
 
 // Relatives function for Human
 void displayHumanList(); // OK
 struct Human searchHumanByFirstName(char*); // OK
 enum boolean ifExist(struct Human); // OK
 
-char* getFirstName(struct Human);
-char* getLastName(struct Human);
-char getGender(struct Human);
-char* getBirthday(struct Human);
-int getSize(struct Human);
-int getWeight(struct Human);
+char* getFirstName(struct Human); // OK
+char* getLastName(struct Human); // OK
+char getGender(struct Human); // OK
+int* getBirthday(struct Human); // OK
+int getSize(struct Human); // OK
+int getWeight(struct Human); // OK
 enum exit_code getExitCode(struct Human);
 
-enum boolean createHuman(void);
+enum boolean createHuman(FILE*);
 void modifyHuman(struct Human);
 
 #endif

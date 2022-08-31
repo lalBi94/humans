@@ -9,7 +9,7 @@ set "TAB=   "
 
 echo %tab%%tab%%tab%%tab%%tab%%tab%%tab%%tab%%tab%%tab%%tab%[Human by.Zod]
 echo:
-echo Discord : Bilaal#7175
+echo Discord : Zod#8682
 echo:
 echo Info : Simulation of the physical and mental health of a human being. 
 echo The goal of this project is to demonstrate 
@@ -36,14 +36,14 @@ if not exist human.exe (
         ping localhost /l 1 > nul
     )
 
-    @REM Check ::main.c
-    if not exist main.c ( 
-        echo :: main.c 
-        echo :: main.c is missing
+    @REM Check ::core.c
+    if not exist core.c ( 
+        echo :: core.c 
+        echo :: core.c is missing
         goto :quit
     ) 
-    if exist main.c (
-        echo :: main.c [OK]
+    if exist core.c (
+        echo :: core.c [OK]
         ping localhost /l 1 > nul
     )
 
@@ -58,19 +58,20 @@ if not exist human.exe (
         ping localhost /l 1 > nul
     )
 
-    @REM Check ::createHuman.c
-    if not exist createHuman.c ( 
-        echo :: createHuman.c 
-        echo :: createHuman.c is missing
+    @REM Check ::ifExist.c
+    if not exist ifExist.c ( 
+        echo :: ifExist.c 
+        echo :: ifExist.c is missing
         goto :quit
     ) 
-    if exist createHuman.c (
-        echo :: createHuman.c [OK]
+    if exist ifExist.c (
+        echo :: ifExist.c [OK]
         ping localhost /l 1 > nul
     )
 
     @REM Creation of human.exe
     echo Successful installation.
+    color 0a
 )
 
 echo:
